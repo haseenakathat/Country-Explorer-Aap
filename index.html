@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Explorer</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file for styling -->
+</head>
+<body>
+    <!-- Header Section for Search and Filters -->
+    <header>
+        <input type="text" id="search" placeholder="Search for a country..." />
+        <!-- Input field for searching countries by name -->
+
+        <select id="region-filter">
+            <option value="">Filter by Region</option> <!-- Default option to select all regions -->
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+        </select>
+        <!-- Dropdown for filtering countries by region -->
+
+        <select id="language-filter">
+            <option value="">Filter by Language</option> <!-- Default option to select all languages -->
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+            <option value="Mandarin">Mandarin</option>
+            <option value="Hindi">Hindi</option>
+        </select>
+        <!-- Dropdown for filtering countries by primary spoken language -->
+
+        <button id="show-more">Show More</button>
+        <!-- Button to load more countries or data -->
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div id="country-list"></div>
+        <!-- Container for displaying the list of country cards dynamically -->
+
+        <div id="favorites-box">
+            <h2>Favorites Countries</h2>
+            <div id="favorites-list"></div>
+            <!-- Container for listing favorite countries -->
+        </div>
+    </main>
+
+    <!-- Linking the JavaScript file for dynamic functionality -->
+    <script src="script.js"></script>
+</body>
+</html>
