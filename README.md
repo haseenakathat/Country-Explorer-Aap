@@ -1,8 +1,11 @@
 **Setup Instructions**
+
 Clone the Repository:
 git clone <repository-url>
 cd <project-folder-name>
+
 **How to run Project**
+
 just go index.html file and open on browser 
 
 **Overview of Your Code**
