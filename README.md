@@ -90,5 +90,7 @@ Final Touches & README Documentation: 1 hour
 
 **About Me**
 
-I’m Haseena Kathat, a frontend web developer based in Beawar, Rajasthan, India. My expertise includes HTML, CSS, JavaScript, and responsive design principles. You can learn more about me on my GitHub Profile.
+I’m Haseena Kathat, a frontend web developer based in Beawar, Rajasthan, India. My expertise includes HTML, CSS, JavaScript, and responsive design principles. You can learn more about me on my Github profile (https://github.com/haseenakathat)
+
+**My Resume:-** https://drive.google.com/file/d/1ILjT1dZrNRd1t4bwHFW9WSuckFyAMeNB/view?usp=sharing
 
