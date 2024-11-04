@@ -150,3 +150,32 @@ button {
     padding-top: 5px;
     padding-bottom: 5px;
 }
+#suggestions {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-height: 150px; /* Limit height and add scroll if needed */
+    overflow-y: auto;
+    display: none; /* Hidden by default */
+    z-index: 10; /* Ensures dropdown is above other elements */
+}
+
+#suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+}
+
+#suggestions div:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+#suggestions .view-all {
+    font-weight: bold;
+    color: blue;
+    cursor: pointer;
+}
+
+
