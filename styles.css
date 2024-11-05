@@ -7,158 +7,43 @@
 
 /* Basic Styling for Body */
 body {
-    background-image: url("Screenshot 2024-10-30 200721.png"); /* Background image for aesthetic */
-    font-family: Arial, sans-serif; /* Set font for readability */
+    background-image: url("Screenshot 2024-10-30 200721.png");
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Fallback background color */
+    background-color: #f4f4f4;
 }
 
 /* Header Styling */
 header {
-    background: #35424a; /* Dark background for contrast */
-    color: #ffffff; /* White text color for readability */
-    padding: 1rem;
-    text-align: center;
+    background: #35424a;
+    color: #ffffff;
     display: flex;
-    justify-content: space-between; /* Aligns content within the header */
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
 }
 
-/* Search Input Styling */
+/* Responsive Layout for Search Input */
 #search {
-    border-radius: 5px; /* Rounded corners */
-    width: 60%; /* Adjusted width */
-    padding: 0.5rem; /* Inner spacing */
+    border-radius: 5px;
+    width: 50%; /* Default full width for mobile */
+    /* max-width: 60%;  */
+    /* Max width on larger screens */
+    padding: 0.5rem;
     margin-top: 1rem;
 }
 
 /* Suggestions Dropdown Styling */
-.suggestions {
-    background: white;
-    border: 1px solid #ccc; /* Light border for separation */
-    position: absolute;
-    width: 80%;
-    z-index: 10; /* Position above other content */
-}
-
-/* Main Layout for Flexbox Arrangement */
-main {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px; /* Space around main content */
-}
-
-/* Country List Styling */
-#country-list {
-    display: flex;
-    flex-wrap: wrap; /* Allows cards to wrap on new lines */
-    gap: 1rem; /* Space between cards */
-    padding: 1rem;
-}
-
-/* Styling for Each Country Card */
-.country-card {
-    border: 1px solid hsl(0, 3%, 6%);
-    border-radius: 5px;
-    padding: 1rem;
-    text-align: center;
-    width: 300px; /* Fixed width for uniformity */
-    background: white; 
-}
-
-/* Favorites Sidebar Styling */
-.favorites {
-    width: 200px;
-    background: #35424a; /* Consistent with header */
-    color: #ffffff;
-    padding: 1rem;
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 600px) {
-    main {
-        flex-direction: column; /* Stack elements vertically */
-    }
-
-    .favorites {
-        width: 100%; /* Full width for small screens */
-    }
-}
-
-/* Styling for Show More Button */
-#show-more {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-    color: #282c34;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease; /* Smooth hover transition */
-}
-
-#show-more:hover {
-    background-color: #ccc; /* Hover effect */
-}
-
-/* Country Flag Image Styling */
-img {
-    width: 100%; /* Full width */
-    height: auto; /* Maintain aspect ratio */
-}
-
-/* Favorites Box Styling */
-#favorites-box {
-    margin-top: 2rem;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #35424a; /* Dark background for contrast */
-    color: white;
-    width: 300px; /* Fixed width */
-}
-
-/* Favorite Button Icon Styling */
-.favorite-btn {
-    background: none; /* Transparent background */
-    border: none; /* No border */
-    cursor: pointer;
-    font-size: 1.5rem;
-}
-
-/* Filter Dropdowns Styling */
-select {
-    border-radius: 5px; /* Rounded corners */
-    padding: 0.5rem;
-    margin-left: 0.5rem;
-    background-color: #ccc; /* Neutral background */
-}
-
-/* Default Button Styling */
-button {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-}
-
-/* Country Details Box Styling */
-#country-details {
-    background-color: white;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
 #suggestions {
     position: absolute;
-    background-color: white;
+    background: white;
     border: 1px solid #ccc;
     width: 100%;
-    max-height: 150px; /* Limit height and add scroll if needed */
+    max-height: 150px;
     overflow-y: auto;
-    display: none; /* Hidden by default */
-    z-index: 10; /* Ensures dropdown is above other elements */
+    display: none;
+    z-index: 10;
 }
 
 #suggestions div {
@@ -178,4 +63,158 @@ button {
     cursor: pointer;
 }
 
+/* Main Layout */
+main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Wraps items on smaller screens */
+    gap: 20px; /* Space between flex items */
+    padding: 20px;
+}
 
+/* Country List Styling */
+#country-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center; /* Center items on smaller screens */
+}
+
+/* Country Card Styling */
+.country-card {
+    border: 1px solid hsl(0, 3%, 6%);
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    width: 100%; /* Full width on small screens */
+    max-width: 300px; /* Fixed width on larger screens */
+    background: white;
+    flex: 1 1 200px; /* Allows flexible resizing on smaller screens */
+}
+
+/* Image Styling */
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Favorites Sidebar Styling */
+.favorites {
+    width: 100%; /* Full width on small screens */
+    max-width: 200px; /* Fixed width on larger screens */
+    background: #35424a;
+    color: #ffffff;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+/* Responsive Show More Button */
+#show-more {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: #282c34;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#show-more:hover {
+    background-color: #ccc;
+}
+
+/* Filter Dropdowns */
+select {
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    background-color: #ccc;
+}
+
+/* Favorites Box */
+#favorites-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #35424a;
+    color: white;
+    width: 100%; /* Full width on small screens */
+    max-width: 300px; /* Fixed width on larger screens */
+}
+
+/* Favorite Button Icon */
+.favorite-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+#country-details {
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For Tablets and Small Laptops */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #country-list {
+        justify-content: center;
+    }
+    
+    #favorites-box,
+    .favorites {
+        width: 80%;
+        margin: auto;
+    }
+
+    #search {
+        width: 80%;
+    }
+}
+
+/* For Mobile Devices */
+@media (max-width: 600px) {
+    body {
+        font-size: 0.9rem; /* Slightly smaller text for readability */
+    }
+
+    #search,
+    .favorites,
+    #favorites-box {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .country-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #show-more {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
