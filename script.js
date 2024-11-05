@@ -16,7 +16,7 @@ let favorites = JSON.parse(localStorage.getItem('favorites')) || []; // Load fav
 // Fetches the list of countries from the API and displays the initial set
 async function fetchCountries(page = 1) {
     try {
-        const response = await fetch(`https://restcountries.com/v3.1/all`);
+        const response = await fetch("https://restcountries.com/v3.1/all");
         const data = await response.json();
         allCountries = data; // Store all countries
         displayCountries(data.slice(0, pageSize)); // Display the first page of countries
@@ -38,10 +38,23 @@ function displayCountries(countries) {
                 ${favorites.includes(country.name.common) ? '❤️' : '🤍'}
             </button>
         `;
+        
         // Redirect to details page on card click
-        countryCard.addEventListener('click', () => {
-            window.location.href = `details.html?name=${country.name.common}`;
+        countryCard.addEventListener('click', (e) => {
+            if (!e.target.classList.contains('favorite-btn')) { // Only redirect if not clicking on the favorite button
+                window.location.href = `details.html?name=${country.name.common}`;
+            }
         });
+
+        // Toggle favorite status when favorite button is clicked
+        const favoriteBtn = countryCard.querySelector('.favorite-btn');
+        favoriteBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent the event from bubbling up to the card click
+            const countryName = e.target.getAttribute('data-country');
+            toggleFavorite(countryName); // Toggle favorite status
+            e.target.innerText = favorites.includes(countryName) ? '❤️' : '🤍'; // Update button icon
+        });
+
         countryList.appendChild(countryCard); // Append the card to the list
     });
 }
@@ -155,15 +168,6 @@ languageFilter.addEventListener('change', filterCountries); // Filter on languag
 searchInput.addEventListener('input', () => {
     filterCountries(); // Filter countries on input
     showSuggestions(); // Show suggestions based on input
-});
-
-// Toggle favorite when favorite button is clicked
-countryList.addEventListener('click', (event) => {
-    if (event.target.classList.contains('favorite-btn')) {
-        const countryName = event.target.getAttribute('data-country'); // Get country name from button data
-        toggleFavorite(countryName); // Toggle favorite status
-        event.target.innerText = favorites.includes(countryName) ? '❤️' : '🤍'; // Update button icon
-    }
 });
 
 // Initial load of countries and favorites
