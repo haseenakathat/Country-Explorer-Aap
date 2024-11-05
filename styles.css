@@ -27,7 +27,7 @@ header {
 /* Search Input Styling */
 #search {
     border-radius: 5px; /* Rounded corners */
-    width: 60%; /* Adjusted width */
+    width: 50%; /* Adjusted width */
     padding: 0.5rem; /* Inner spacing */
     margin-top: 1rem;
 }
