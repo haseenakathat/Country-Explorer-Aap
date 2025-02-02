@@ -72,6 +72,6 @@ Spent approximately **8-10 hours** on the project:
 - I specialize in **HTML**, **CSS**, **JavaScript**, and **responsive design** principles.
 - Learn more about me on my [GitHub profile](https://github.com/haseenakathat).
 
-- 📄 [My Resume](https://drive.google.com/file/d/1ILjT1dZrNRd1t4bwHFW9WSuckFyAMeNB/view?usp=sharing)
+- 📄 [My Resume](https://drive.google.com/file/d/1z9MJxPxDXriiJFBLQXPGZGSOJfPI_YAJ/view?usp=sharing)
 
 
